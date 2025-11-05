@@ -23,6 +23,8 @@ namespace IP_Address
 			textBox_BroadcastAddress.Text = "";
 			textBox_TotalIPAddresses.Text = "";
 			textBox_UsableIPAddresses.Text = "";
+			textBox_UsableHosts.Text = "";
+			textBox_MaskPrefix.Text = "";
 		}
 
 		private void Button_Calculate_Click(object sender, EventArgs e)
@@ -91,11 +93,16 @@ namespace IP_Address
 			// Количество узлов = Общее количество адресов - 2 (адрес сети и широковещательный адрес)
 			int usableAddresses = totalAddresses - 2;
 			if (usableAddresses < 0) usableAddresses = 0; // Если сеть /31 или /32, то узлов 0.
+			int usableHosts = usableAddresses;
+			if (usableHosts < 0) usableHosts = 0;
+
+			textBox_MaskPrefix.Text = "/" + prefixLength.ToString();
 
 			textBox_NetworkAddress.Text = networkAddress.ToString();
 			textBox_BroadcastAddress.Text = broadcastAddress.ToString();
 			textBox_TotalIPAddresses.Text = totalAddresses.ToString();
 			textBox_UsableIPAddresses.Text = usableAddresses.ToString();
+			textBox_UsableHosts.Text = usableHosts.ToString();
 		}
 	}
 }

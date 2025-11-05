@@ -41,6 +41,10 @@
 			this.textBox_BroadcastAddress = new System.Windows.Forms.TextBox();
 			this.textBox_TotalIPAddresses = new System.Windows.Forms.TextBox();
 			this.textBox_UsableIPAddresses = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.textBox_UsableHosts = new System.Windows.Forms.TextBox();
+			this.textBox_MaskPrefix = new System.Windows.Forms.TextBox();
+			this.labelMaskPrefix = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// TextBox_IPAddress
@@ -151,11 +155,47 @@
 			this.textBox_UsableIPAddresses.Size = new System.Drawing.Size(268, 22);
 			this.textBox_UsableIPAddresses.TabIndex = 12;
 			// 
-			// Form1
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(36, 361);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(89, 16);
+			this.label1.TabIndex = 13;
+			this.label1.Text = "Usable hosts:";
+			// 
+			// textBox_UsableHosts
+			// 
+			this.textBox_UsableHosts.Location = new System.Drawing.Point(190, 361);
+			this.textBox_UsableHosts.Name = "textBox_UsableHosts";
+			this.textBox_UsableHosts.Size = new System.Drawing.Size(268, 22);
+			this.textBox_UsableHosts.TabIndex = 14;
+			// 
+			// textBox_MaskPrefix
+			// 
+			this.textBox_MaskPrefix.Location = new System.Drawing.Point(668, 94);
+			this.textBox_MaskPrefix.Name = "textBox_MaskPrefix";
+			this.textBox_MaskPrefix.Size = new System.Drawing.Size(100, 22);
+			this.textBox_MaskPrefix.TabIndex = 15;
+			// 
+			// labelMaskPrefix
+			// 
+			this.labelMaskPrefix.AutoSize = true;
+			this.labelMaskPrefix.Location = new System.Drawing.Point(511, 97);
+			this.labelMaskPrefix.Name = "labelMaskPrefix";
+			this.labelMaskPrefix.Size = new System.Drawing.Size(123, 16);
+			this.labelMaskPrefix.TabIndex = 16;
+			this.labelMaskPrefix.Text = "Subnet mask prefix:";
+			// 
+			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.labelMaskPrefix);
+			this.Controls.Add(this.textBox_MaskPrefix);
+			this.Controls.Add(this.textBox_UsableHosts);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox_UsableIPAddresses);
 			this.Controls.Add(this.textBox_TotalIPAddresses);
 			this.Controls.Add(this.textBox_BroadcastAddress);
@@ -169,8 +209,8 @@
 			this.Controls.Add(this.TextBox_SubnetMask);
 			this.Controls.Add(this.labelIP);
 			this.Controls.Add(this.TextBox_IPAddress);
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "Main";
+			this.Text = "IPCalculator";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -191,6 +231,10 @@
 		private System.Windows.Forms.TextBox textBox_BroadcastAddress;
 		private System.Windows.Forms.TextBox textBox_TotalIPAddresses;
 		private System.Windows.Forms.TextBox textBox_UsableIPAddresses;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox textBox_UsableHosts;
+		private System.Windows.Forms.TextBox textBox_MaskPrefix;
+		private System.Windows.Forms.Label labelMaskPrefix;
 	}
 }
 
