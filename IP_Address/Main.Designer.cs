@@ -30,26 +30,28 @@
 		{
 			this.TextBox_IPAddress = new System.Windows.Forms.TextBox();
 			this.labelIP = new System.Windows.Forms.Label();
-			this.TextBox_SubnetMask = new System.Windows.Forms.TextBox();
 			this.labelSubnetMask = new System.Windows.Forms.Label();
 			this.Button_Calculate = new System.Windows.Forms.Button();
 			this.Label_NetworkAddress = new System.Windows.Forms.Label();
 			this.Label_BroadcastAddress = new System.Windows.Forms.Label();
 			this.Label_TotalIPAddresses = new System.Windows.Forms.Label();
-			this.Label_UsableIPAddresses = new System.Windows.Forms.Label();
 			this.textBox_NetworkAddress = new System.Windows.Forms.TextBox();
 			this.textBox_BroadcastAddress = new System.Windows.Forms.TextBox();
 			this.textBox_TotalIPAddresses = new System.Windows.Forms.TextBox();
-			this.textBox_UsableIPAddresses = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox_UsableHosts = new System.Windows.Forms.TextBox();
 			this.textBox_MaskPrefix = new System.Windows.Forms.TextBox();
 			this.labelMaskPrefix = new System.Windows.Forms.Label();
+			this.comboBox_SubnetMask = new System.Windows.Forms.ComboBox();
+			this.label_FirstUsableIPAddress = new System.Windows.Forms.Label();
+			this.label_LastUsableIPAddress = new System.Windows.Forms.Label();
+			this.textBox_FirstIPAddress = new System.Windows.Forms.TextBox();
+			this.textBox_LastIPAddress = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// TextBox_IPAddress
 			// 
-			this.TextBox_IPAddress.Location = new System.Drawing.Point(190, 39);
+			this.TextBox_IPAddress.Location = new System.Drawing.Point(218, 42);
 			this.TextBox_IPAddress.Name = "TextBox_IPAddress";
 			this.TextBox_IPAddress.Size = new System.Drawing.Size(268, 22);
 			this.TextBox_IPAddress.TabIndex = 0;
@@ -62,13 +64,6 @@
 			this.labelIP.Size = new System.Drawing.Size(75, 16);
 			this.labelIP.TabIndex = 1;
 			this.labelIP.Text = "IP address:";
-			// 
-			// TextBox_SubnetMask
-			// 
-			this.TextBox_SubnetMask.Location = new System.Drawing.Point(190, 94);
-			this.TextBox_SubnetMask.Name = "TextBox_SubnetMask";
-			this.TextBox_SubnetMask.Size = new System.Drawing.Size(268, 22);
-			this.TextBox_SubnetMask.TabIndex = 2;
 			// 
 			// labelSubnetMask
 			// 
@@ -103,7 +98,7 @@
 			// Label_BroadcastAddress
 			// 
 			this.Label_BroadcastAddress.AutoSize = true;
-			this.Label_BroadcastAddress.Location = new System.Drawing.Point(36, 238);
+			this.Label_BroadcastAddress.Location = new System.Drawing.Point(36, 237);
 			this.Label_BroadcastAddress.Name = "Label_BroadcastAddress";
 			this.Label_BroadcastAddress.Size = new System.Drawing.Size(125, 16);
 			this.Label_BroadcastAddress.TabIndex = 6;
@@ -112,53 +107,37 @@
 			// Label_TotalIPAddresses
 			// 
 			this.Label_TotalIPAddresses.AutoSize = true;
-			this.Label_TotalIPAddresses.Location = new System.Drawing.Point(36, 280);
+			this.Label_TotalIPAddresses.Location = new System.Drawing.Point(36, 279);
 			this.Label_TotalIPAddresses.Name = "Label_TotalIPAddresses";
 			this.Label_TotalIPAddresses.Size = new System.Drawing.Size(124, 16);
 			this.Label_TotalIPAddresses.TabIndex = 7;
 			this.Label_TotalIPAddresses.Text = "Total IP addresses:";
 			// 
-			// Label_UsableIPAddresses
-			// 
-			this.Label_UsableIPAddresses.AutoSize = true;
-			this.Label_UsableIPAddresses.Location = new System.Drawing.Point(36, 322);
-			this.Label_UsableIPAddresses.Name = "Label_UsableIPAddresses";
-			this.Label_UsableIPAddresses.Size = new System.Drawing.Size(137, 16);
-			this.Label_UsableIPAddresses.TabIndex = 8;
-			this.Label_UsableIPAddresses.Text = "Usable IP addresses:";
-			// 
 			// textBox_NetworkAddress
 			// 
-			this.textBox_NetworkAddress.Location = new System.Drawing.Point(190, 195);
+			this.textBox_NetworkAddress.Location = new System.Drawing.Point(218, 198);
 			this.textBox_NetworkAddress.Name = "textBox_NetworkAddress";
 			this.textBox_NetworkAddress.Size = new System.Drawing.Size(268, 22);
 			this.textBox_NetworkAddress.TabIndex = 9;
 			// 
 			// textBox_BroadcastAddress
 			// 
-			this.textBox_BroadcastAddress.Location = new System.Drawing.Point(190, 238);
+			this.textBox_BroadcastAddress.Location = new System.Drawing.Point(218, 239);
 			this.textBox_BroadcastAddress.Name = "textBox_BroadcastAddress";
 			this.textBox_BroadcastAddress.Size = new System.Drawing.Size(268, 22);
 			this.textBox_BroadcastAddress.TabIndex = 10;
 			// 
 			// textBox_TotalIPAddresses
 			// 
-			this.textBox_TotalIPAddresses.Location = new System.Drawing.Point(190, 277);
+			this.textBox_TotalIPAddresses.Location = new System.Drawing.Point(218, 280);
 			this.textBox_TotalIPAddresses.Name = "textBox_TotalIPAddresses";
 			this.textBox_TotalIPAddresses.Size = new System.Drawing.Size(268, 22);
 			this.textBox_TotalIPAddresses.TabIndex = 11;
 			// 
-			// textBox_UsableIPAddresses
-			// 
-			this.textBox_UsableIPAddresses.Location = new System.Drawing.Point(190, 319);
-			this.textBox_UsableIPAddresses.Name = "textBox_UsableIPAddresses";
-			this.textBox_UsableIPAddresses.Size = new System.Drawing.Size(268, 22);
-			this.textBox_UsableIPAddresses.TabIndex = 12;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(36, 361);
+			this.label1.Location = new System.Drawing.Point(36, 321);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(89, 16);
 			this.label1.TabIndex = 13;
@@ -166,7 +145,7 @@
 			// 
 			// textBox_UsableHosts
 			// 
-			this.textBox_UsableHosts.Location = new System.Drawing.Point(190, 361);
+			this.textBox_UsableHosts.Location = new System.Drawing.Point(218, 321);
 			this.textBox_UsableHosts.Name = "textBox_UsableHosts";
 			this.textBox_UsableHosts.Size = new System.Drawing.Size(268, 22);
 			this.textBox_UsableHosts.TabIndex = 14;
@@ -183,30 +162,105 @@
 			this.labelMaskPrefix.AutoSize = true;
 			this.labelMaskPrefix.Location = new System.Drawing.Point(511, 97);
 			this.labelMaskPrefix.Name = "labelMaskPrefix";
-			this.labelMaskPrefix.Size = new System.Drawing.Size(123, 16);
+			this.labelMaskPrefix.Size = new System.Drawing.Size(78, 16);
 			this.labelMaskPrefix.TabIndex = 16;
-			this.labelMaskPrefix.Text = "Subnet mask prefix:";
+			this.labelMaskPrefix.Text = "CIDR mask:";
+			// 
+			// comboBox_SubnetMask
+			// 
+			this.comboBox_SubnetMask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox_SubnetMask.FormattingEnabled = true;
+			this.comboBox_SubnetMask.Items.AddRange(new object[] {
+            "255.255.255.255",
+            "255.255.255.254",
+            "255.255.255.252",
+            "255.255.255.248",
+            "255.255.255.240",
+            "255.255.255.224",
+            "255.255.255.192",
+            "255.255.255.128",
+            "255.255.255.0",
+            "255.255.254.0",
+            "255.255.252.0",
+            "255.255.248.0",
+            "255.255.240.0",
+            "255.255.224.0",
+            "255.255.192.0",
+            "255.255.128.0",
+            "255.255.0.0",
+            "255.254.0.0",
+            "255.252.0.0",
+            "255.248.0.0",
+            "255.240.0.0",
+            "255.224.0.0",
+            "255.192.0.0",
+            "255.0.0.0",
+            "254.0.0.0",
+            "252.0.0.0",
+            "248.0.0.0",
+            "240.0.0.0",
+            "224.0.0.0",
+            "192.0.0.0",
+            "128.0.0.0"});
+			this.comboBox_SubnetMask.Location = new System.Drawing.Point(218, 92);
+			this.comboBox_SubnetMask.Name = "comboBox_SubnetMask";
+			this.comboBox_SubnetMask.Size = new System.Drawing.Size(268, 24);
+			this.comboBox_SubnetMask.TabIndex = 17;
+			// 
+			// label_FirstUsableIPAddress
+			// 
+			this.label_FirstUsableIPAddress.AutoSize = true;
+			this.label_FirstUsableIPAddress.Location = new System.Drawing.Point(36, 363);
+			this.label_FirstUsableIPAddress.Name = "label_FirstUsableIPAddress";
+			this.label_FirstUsableIPAddress.Size = new System.Drawing.Size(175, 16);
+			this.label_FirstUsableIPAddress.TabIndex = 18;
+			this.label_FirstUsableIPAddress.Text = "First host usable IP address:";
+			// 
+			// label_LastUsableIPAddress
+			// 
+			this.label_LastUsableIPAddress.AutoSize = true;
+			this.label_LastUsableIPAddress.Location = new System.Drawing.Point(36, 405);
+			this.label_LastUsableIPAddress.Name = "label_LastUsableIPAddress";
+			this.label_LastUsableIPAddress.Size = new System.Drawing.Size(175, 16);
+			this.label_LastUsableIPAddress.TabIndex = 19;
+			this.label_LastUsableIPAddress.Text = "Last host usable IP address:";
+			// 
+			// textBox_FirstIPAddress
+			// 
+			this.textBox_FirstIPAddress.Location = new System.Drawing.Point(218, 362);
+			this.textBox_FirstIPAddress.Name = "textBox_FirstIPAddress";
+			this.textBox_FirstIPAddress.Size = new System.Drawing.Size(268, 22);
+			this.textBox_FirstIPAddress.TabIndex = 20;
+			// 
+			// textBox_LastIPAddress
+			// 
+			this.textBox_LastIPAddress.Location = new System.Drawing.Point(218, 403);
+			this.textBox_LastIPAddress.Name = "textBox_LastIPAddress";
+			this.textBox_LastIPAddress.Size = new System.Drawing.Size(268, 22);
+			this.textBox_LastIPAddress.TabIndex = 21;
 			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.textBox_LastIPAddress);
+			this.Controls.Add(this.textBox_FirstIPAddress);
+			this.Controls.Add(this.label_LastUsableIPAddress);
+			this.Controls.Add(this.label_FirstUsableIPAddress);
+			this.Controls.Add(this.comboBox_SubnetMask);
 			this.Controls.Add(this.labelMaskPrefix);
 			this.Controls.Add(this.textBox_MaskPrefix);
 			this.Controls.Add(this.textBox_UsableHosts);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.textBox_UsableIPAddresses);
 			this.Controls.Add(this.textBox_TotalIPAddresses);
 			this.Controls.Add(this.textBox_BroadcastAddress);
 			this.Controls.Add(this.textBox_NetworkAddress);
-			this.Controls.Add(this.Label_UsableIPAddresses);
 			this.Controls.Add(this.Label_TotalIPAddresses);
 			this.Controls.Add(this.Label_BroadcastAddress);
 			this.Controls.Add(this.Label_NetworkAddress);
 			this.Controls.Add(this.Button_Calculate);
 			this.Controls.Add(this.labelSubnetMask);
-			this.Controls.Add(this.TextBox_SubnetMask);
 			this.Controls.Add(this.labelIP);
 			this.Controls.Add(this.TextBox_IPAddress);
 			this.Name = "Main";
@@ -220,21 +274,23 @@
 
 		private System.Windows.Forms.TextBox TextBox_IPAddress;
 		private System.Windows.Forms.Label labelIP;
-		private System.Windows.Forms.TextBox TextBox_SubnetMask;
 		private System.Windows.Forms.Label labelSubnetMask;
 		private System.Windows.Forms.Button Button_Calculate;
 		private System.Windows.Forms.Label Label_NetworkAddress;
 		private System.Windows.Forms.Label Label_BroadcastAddress;
 		private System.Windows.Forms.Label Label_TotalIPAddresses;
-		private System.Windows.Forms.Label Label_UsableIPAddresses;
 		private System.Windows.Forms.TextBox textBox_NetworkAddress;
 		private System.Windows.Forms.TextBox textBox_BroadcastAddress;
 		private System.Windows.Forms.TextBox textBox_TotalIPAddresses;
-		private System.Windows.Forms.TextBox textBox_UsableIPAddresses;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBox_UsableHosts;
 		private System.Windows.Forms.TextBox textBox_MaskPrefix;
 		private System.Windows.Forms.Label labelMaskPrefix;
+		private System.Windows.Forms.ComboBox comboBox_SubnetMask;
+		private System.Windows.Forms.Label label_FirstUsableIPAddress;
+		private System.Windows.Forms.Label label_LastUsableIPAddress;
+		private System.Windows.Forms.TextBox textBox_FirstIPAddress;
+		private System.Windows.Forms.TextBox textBox_LastIPAddress;
 	}
 }
 
