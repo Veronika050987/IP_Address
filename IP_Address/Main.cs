@@ -23,9 +23,10 @@ namespace IP_Address
 			
 			textBox_NetworkAddress.Text = "";
 			textBox_BroadcastAddress.Text = "";
-			textBox_TotalIPAddresses.Text = "";
 			
+			textBox_TotalIPAddresses.Text = "";
 			textBox_UsableHosts.Text = "";
+			
 			textBox_MaskPrefix.Text = "";
 
 			textBox_FirstIPAddress.Text = "";
@@ -163,12 +164,10 @@ namespace IP_Address
 
 			textBox_MaskPrefix.Text = "/" + prefixLength.ToString();
 			
-			textBox_NetworkAddress.Text = networkAddress.ToString();
-			
+			textBox_NetworkAddress.Text = networkAddress.ToString();			
 			textBox_BroadcastAddress.Text = broadcastAddress.ToString();
 			
-			textBox_TotalIPAddresses.Text = totalAddresses.ToString();			
-			
+			textBox_TotalIPAddresses.Text = totalAddresses.ToString();						
 			textBox_UsableHosts.Text = usableHosts.ToString();
 
 			textBox_FirstIPAddress.Text = (firstUsableIP != null) ? firstUsableIP.ToString() : "N/A";
