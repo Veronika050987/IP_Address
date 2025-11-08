@@ -31,7 +31,6 @@
 			this.TextBox_IPAddress = new System.Windows.Forms.TextBox();
 			this.labelIP = new System.Windows.Forms.Label();
 			this.labelSubnetMask = new System.Windows.Forms.Label();
-			this.Button_Calculate = new System.Windows.Forms.Button();
 			this.Label_NetworkAddress = new System.Windows.Forms.Label();
 			this.Label_BroadcastAddress = new System.Windows.Forms.Label();
 			this.Label_TotalIPAddresses = new System.Windows.Forms.Label();
@@ -40,13 +39,15 @@
 			this.textBox_TotalIPAddresses = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox_UsableHosts = new System.Windows.Forms.TextBox();
-			this.textBox_MaskPrefix = new System.Windows.Forms.TextBox();
 			this.labelMaskPrefix = new System.Windows.Forms.Label();
 			this.comboBox_SubnetMask = new System.Windows.Forms.ComboBox();
 			this.label_FirstUsableIPAddress = new System.Windows.Forms.Label();
 			this.label_LastUsableIPAddress = new System.Windows.Forms.Label();
 			this.textBox_FirstIPAddress = new System.Windows.Forms.TextBox();
 			this.textBox_LastIPAddress = new System.Windows.Forms.TextBox();
+			this.comboBox_MaskPrefix = new System.Windows.Forms.ComboBox();
+			this.button_Calculate = new System.Windows.Forms.Button();
+			this.textBox_AddressType = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// TextBox_IPAddress
@@ -73,18 +74,6 @@
 			this.labelSubnetMask.Size = new System.Drawing.Size(88, 16);
 			this.labelSubnetMask.TabIndex = 3;
 			this.labelSubnetMask.Text = "Subnet mask:";
-			// 
-			// Button_Calculate
-			// 
-			this.Button_Calculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.Button_Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.Button_Calculate.Location = new System.Drawing.Point(152, 146);
-			this.Button_Calculate.Name = "Button_Calculate";
-			this.Button_Calculate.Size = new System.Drawing.Size(105, 30);
-			this.Button_Calculate.TabIndex = 4;
-			this.Button_Calculate.Text = "Calculate";
-			this.Button_Calculate.UseVisualStyleBackColor = false;
-			this.Button_Calculate.Click += new System.EventHandler(this.Button_Calculate_Click);
 			// 
 			// Label_NetworkAddress
 			// 
@@ -150,17 +139,10 @@
 			this.textBox_UsableHosts.Size = new System.Drawing.Size(268, 22);
 			this.textBox_UsableHosts.TabIndex = 14;
 			// 
-			// textBox_MaskPrefix
-			// 
-			this.textBox_MaskPrefix.Location = new System.Drawing.Point(668, 94);
-			this.textBox_MaskPrefix.Name = "textBox_MaskPrefix";
-			this.textBox_MaskPrefix.Size = new System.Drawing.Size(100, 22);
-			this.textBox_MaskPrefix.TabIndex = 15;
-			// 
 			// labelMaskPrefix
 			// 
 			this.labelMaskPrefix.AutoSize = true;
-			this.labelMaskPrefix.Location = new System.Drawing.Point(511, 97);
+			this.labelMaskPrefix.Location = new System.Drawing.Point(616, 97);
 			this.labelMaskPrefix.Name = "labelMaskPrefix";
 			this.labelMaskPrefix.Size = new System.Drawing.Size(78, 16);
 			this.labelMaskPrefix.TabIndex = 16;
@@ -194,6 +176,7 @@
             "255.240.0.0",
             "255.224.0.0",
             "255.192.0.0",
+            "255.128.0.0",
             "255.0.0.0",
             "254.0.0.0",
             "252.0.0.0",
@@ -239,18 +222,80 @@
 			this.textBox_LastIPAddress.Size = new System.Drawing.Size(268, 22);
 			this.textBox_LastIPAddress.TabIndex = 21;
 			// 
+			// comboBox_MaskPrefix
+			// 
+			this.comboBox_MaskPrefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox_MaskPrefix.FormattingEnabled = true;
+			this.comboBox_MaskPrefix.Items.AddRange(new object[] {
+            "/32",
+            "/31",
+            "/30",
+            "/29",
+            "/28",
+            "/27",
+            "/26",
+            "/25",
+            "/24",
+            "/23",
+            "/22",
+            "/21",
+            "/20",
+            "/19",
+            "/18",
+            "/17",
+            "/16",
+            "/15",
+            "/14",
+            "/13",
+            "/12",
+            "/11",
+            "/10",
+            "/9",
+            "/8",
+            "/7",
+            "/6",
+            "/5",
+            "/4",
+            "/3",
+            "/2",
+            "/1"});
+			this.comboBox_MaskPrefix.Location = new System.Drawing.Point(717, 94);
+			this.comboBox_MaskPrefix.Name = "comboBox_MaskPrefix";
+			this.comboBox_MaskPrefix.Size = new System.Drawing.Size(126, 24);
+			this.comboBox_MaskPrefix.TabIndex = 22;
+			// 
+			// button_Calculate
+			// 
+			this.button_Calculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.button_Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.button_Calculate.Location = new System.Drawing.Point(218, 142);
+			this.button_Calculate.Name = "button_Calculate";
+			this.button_Calculate.Size = new System.Drawing.Size(135, 33);
+			this.button_Calculate.TabIndex = 23;
+			this.button_Calculate.Text = "Calculate";
+			this.button_Calculate.UseVisualStyleBackColor = false;
+			// 
+			// textBox_AddressType
+			// 
+			this.textBox_AddressType.Location = new System.Drawing.Point(536, 42);
+			this.textBox_AddressType.Name = "textBox_AddressType";
+			this.textBox_AddressType.Size = new System.Drawing.Size(307, 22);
+			this.textBox_AddressType.TabIndex = 24;
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(874, 450);
+			this.Controls.Add(this.textBox_AddressType);
+			this.Controls.Add(this.button_Calculate);
+			this.Controls.Add(this.comboBox_MaskPrefix);
 			this.Controls.Add(this.textBox_LastIPAddress);
 			this.Controls.Add(this.textBox_FirstIPAddress);
 			this.Controls.Add(this.label_LastUsableIPAddress);
 			this.Controls.Add(this.label_FirstUsableIPAddress);
 			this.Controls.Add(this.comboBox_SubnetMask);
 			this.Controls.Add(this.labelMaskPrefix);
-			this.Controls.Add(this.textBox_MaskPrefix);
 			this.Controls.Add(this.textBox_UsableHosts);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox_TotalIPAddresses);
@@ -259,7 +304,6 @@
 			this.Controls.Add(this.Label_TotalIPAddresses);
 			this.Controls.Add(this.Label_BroadcastAddress);
 			this.Controls.Add(this.Label_NetworkAddress);
-			this.Controls.Add(this.Button_Calculate);
 			this.Controls.Add(this.labelSubnetMask);
 			this.Controls.Add(this.labelIP);
 			this.Controls.Add(this.TextBox_IPAddress);
@@ -275,7 +319,6 @@
 		private System.Windows.Forms.TextBox TextBox_IPAddress;
 		private System.Windows.Forms.Label labelIP;
 		private System.Windows.Forms.Label labelSubnetMask;
-		private System.Windows.Forms.Button Button_Calculate;
 		private System.Windows.Forms.Label Label_NetworkAddress;
 		private System.Windows.Forms.Label Label_BroadcastAddress;
 		private System.Windows.Forms.Label Label_TotalIPAddresses;
@@ -284,13 +327,15 @@
 		private System.Windows.Forms.TextBox textBox_TotalIPAddresses;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBox_UsableHosts;
-		private System.Windows.Forms.TextBox textBox_MaskPrefix;
 		private System.Windows.Forms.Label labelMaskPrefix;
 		private System.Windows.Forms.ComboBox comboBox_SubnetMask;
 		private System.Windows.Forms.Label label_FirstUsableIPAddress;
 		private System.Windows.Forms.Label label_LastUsableIPAddress;
 		private System.Windows.Forms.TextBox textBox_FirstIPAddress;
 		private System.Windows.Forms.TextBox textBox_LastIPAddress;
+		private System.Windows.Forms.ComboBox comboBox_MaskPrefix;
+		private System.Windows.Forms.Button button_Calculate;
+		private System.Windows.Forms.TextBox textBox_AddressType;
 	}
 }
 
