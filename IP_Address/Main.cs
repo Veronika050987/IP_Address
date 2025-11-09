@@ -27,7 +27,7 @@ namespace IP_Address
 
 			TextBox_IPAddress.Text = "192.168.1.10";
 
-			comboBox_SubnetMask.SelectedIndex = 3;
+			comboBox_SubnetMask.SelectedIndex = 0;
 
 			textBox_AddressType.Text = "";
 			textBox_NetworkAddress.Text = "";
@@ -86,6 +86,9 @@ namespace IP_Address
 		private void PopulateMaskComboBox()
 		{
 			comboBox_SubnetMask.Items.Clear();
+
+			comboBox_SubnetMask.Items.Add("Выберите маску...");
+
 			foreach (var mask in subnetMaskToPrefixString.Keys.OrderBy
 				(m => IPAddress.Parse(m).GetAddressBytes().Aggregate(0L, (acc, b) => (acc << 8) | b)))
 			{
@@ -148,19 +151,19 @@ namespace IP_Address
 			// 0.0.0.0 (Default Gateway / Current Network)
 			if (ipBytes[0] == 0 && ipBytes[1] == 0 && ipBytes[2] == 0 && ipBytes[3] == 0)
 			{
-				return "Шлюз по умолчанию / Текущая сеть";
+				return "Зарезервированный адрес";
 			}
 
 			// 127.0.0.0/8 (Loopback)
 			if (ipBytes[0] == 127)
 			{
-				return "Петлевой интерфейс (localhost)";
+				return "Петлевой интерфейс (Loopback)";
 			}
 
 			// 10.0.0.0/8 (Private)
 			if (ipBytes[0] == 10)
 			{
-				return "Приватная сеть (LAN)";
+				return "Автономная сеть";
 			}
 
 			// 172.16.0.0/12 (Private)
